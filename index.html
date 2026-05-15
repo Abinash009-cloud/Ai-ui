@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>FutureDev 2026</title>
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="Style.css" />
+
+  <!-- Remix Icons -->
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+
+  <!-- AOS Animation -->
+
+  <link
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    rel="stylesheet"
+  />
+
+</head>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+<!-- AI CHATBOT -->
+
+<div class="chatbot-toggle">
+  <i class="ri-robot-2-line"></i>
+</div>
+
+<div class="chatbot">
+
+  <div class="chat-header">
+
+    <h3>Future AI Assistant</h3>
+
+    <span class="close-chat">
+      <i class="ri-close-line"></i>
+    </span>
+
+  </div>
+
+  <div class="chat-body" id="chat-body">
+
+    <div class="bot-message">
+      Hello Developer 🚀 <br>
+      Ask me anything about AI,
+      coding, or FutureDev.
+    </div>
+
+  </div>
+
+  <div class="chat-input-area">
+
+    <input
+    type="text"
+    id="chat-input"
+    placeholder="Type your message...">
+
+    <button id="send-btn">
+      Send
+    </button>
+
+  </div>
+
+</div>
+<body>
+  <!-- AI CHATBOT -->
+
+<div class="chatbot-toggle">
+  <i class="ri-robot-2-line"></i>
+</div>
+
+<div class="chatbot">
+
+  <div class="chat-header">
+
+    <h3>Future AI Assistant</h3>
+
+    <span class="close-chat">
+      <i class="ri-close-line"></i>
+    </span>
+
+  </div>
+
+  <div class="chat-body" id="chat-body">
+
+    <div class="bot-message">
+      Hello Developer 🚀 <br>
+      Ask me anything about AI,
+      coding, or FutureDev.
+    </div>
+
+  </div>
+
+  <div class="chat-input-area">
+
+    <input
+    type="text"
+    id="chat-input"
+    placeholder="Type your message...">
+
+    <button id="send-btn">
+      Send
+    </button>
+
+  </div>
+
+</div>
+  <!-- LOADER -->
+
+<div class="loader">
+
+  <h1 class="loader-logo">
+    FutureDev 2026
+  </h1>
+
+  <div class="loader-bar">
+
+    <div class="loader-progress"></div>
+
+  </div>
+
+  <p class="loader-text">
+    Initializing AI Systems...
+  </p>
+
+</div>
+
+  <!-- PARTICLES -->
+
+  <div id="particles-js"></div>
+
+  <!-- GLOW -->
+
+  <div class="glow"></div>
+
+  <!-- NAVBAR -->
+
+ <nav>
+
+  <h1 class="logo">
+    FutureDev 2026
+  </h1>
+
+  <!-- HAMBURGER -->
+
+  <div class="menu-toggle">
+    <i class="ri-menu-3-line"></i>
+  </div>
+
+
+
+<ul class="nav-links">
+
+  <li>
+    <a href="#skills">
+      <i class="ri-code-s-slash-line"></i>
+      Skills
+    </a>
+  </li>
+
+  <li>
+    <a href="#ai">
+      <i class="ri-cpu-line"></i>
+      AI
+    </a>
+  </li>
+
+  <li>
+    <a href="#tools">
+      <i class="ri-robot-2-line"></i>
+      Tools
+    </a>
+  </li>
+
+  <li>
+    <a href="#projects">
+      <i class="ri-layout-grid-line"></i>
+      Projects
+    </a>
+  </li>
+
+  <li>
+    <a href="#roadmap">
+      <i class="ri-road-map-line"></i>
+      Roadmap
+    </a>
+  </li>
+
+  <li>
+    <a href="#future">
+      <i class="ri-rocket-line"></i>
+      Future
+    </a>
+  </li>
+
+</ul>
+
+<div class="theme-toggle">
+  <i class="ri-moon-line"></i>
+</div>
+</nav>
+  <!-- HERO SECTION -->
+
+  <section class="hero">
+
+    <!-- OPTIONAL VIDEO -->
+
+    <video autoplay muted loop playsinline class="bg-video">
+
+      <source src="assets/bg.mp4" type="video/mp4">
+
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+      <span class="ai-badge">
+        AI Powered Developer Era
+      </span>
+
+      <h2>
+        Developer Of The Future
+      </h2>
+
+      <p>
+
+        In 2026, AI is not replacing developers.
+        AI is multiplying developers.
+
+        The best developers combine coding,
+        AI systems, automation,
+        creativity, and problem-solving.
+
+      </p>
+
+      <div class="hero-buttons">
+
+        <button id="startFutureBtn">
+  Start The Future
+</button>
+
+<button class="secondary-btn" id="exploreAiBtn">
+  Explore AI
+</button>
+
+       
+
+      </div>
+
+      <!-- STATS -->
+
+      <div class="hero-stats">
+
+        <div class="stat-box">
+
+         <h3 class="counter" data-target="10">0</h3>
+
+          <p>AI Productivity</p>
+
+        </div>
+
+        <div class="stat-box">
+
+          <h3 class="counter" data-target="2026">0</h3>
+
+          <p>Future Ready</p>
+
+        </div>
+
+        <div class="stat-box">
+
+          <h3 class="counter" data-target="24">0</h3>
+          
+<p>Hours Automation</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TERMINAL SECTION -->
+
+  <section class="terminal-section">
+
+  <div class="terminal">
+
+    <div id="terminal-output"></div>
+
+    <span class="cursor"></span>
+
+  </div>
+
+</section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <h1 class="section-title">
+      Skills Developers Need
+    </h1>
+
+    <div class="card-container">
+
+      <div class="card">
+
+        <i class="ri-code-s-slash-line"></i>
+
+        <h3>AI Integration</h3>
+
+        <p>
+          Learn AI APIs, automation,
+          AI chatbots, and smart systems.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <i class="ri-reactjs-line"></i>
+
+        <h3>Full Stack Development</h3>
+
+        <p>
+          React, Node.js,
+          authentication,
+          databases, deployment.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <i class="ri-robot-line"></i>
+
+        <h3>Prompt Engineering</h3>
+
+        <p>
+          Learn how to communicate
+          effectively with AI systems.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <i class="ri-cpu-line"></i>
+
+        <h3>Automation</h3>
+
+        <p>
+          Build smart systems
+          that automate tasks.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <i class="ri-layout-4-line"></i>
+
+        <h3>UI / UX Design</h3>
+
+        <p>
+          Create futuristic interfaces
+          and smooth user experiences.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <i class="ri-user-star-line"></i>
+
+        <h3>Personal Branding</h3>
+
+        <p>
+          Build GitHub,
+          LinkedIn,
+          and developer portfolios.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- AI SECTION -->
+
+  <section id="ai">
+
+    <h1 class="section-title">
+      AI Is The Main Role
+    </h1>
+
+    <div class="card-container">
+
+      <div class="card">
+
+        <h3>AI Co-Pilot</h3>
+
+        <p>
+          AI helps developers write
+          code and debug faster.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Human + AI</h3>
+
+        <p>
+          Developers who work with AI
+          will dominate the future.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Fast Learning</h3>
+
+        <p>
+          AI allows developers to learn
+          technologies rapidly.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- AI TOOLS -->
+
+  <section id="tools">
+
+    <h1 class="section-title">
+      Best AI Tools For Developers
+    </h1>
+
+    <div class="tools-grid">
+
+      <!-- TOOL CARD -->
+
+      <div class="ai-tool-card">
+
+        <div class="tool-top">
+
+          <h2>ChatGPT</h2>
+
+          <span>AI Assistant</span>
+
+        </div>
+
+        <p>
+          Coding, debugging,
+          learning frameworks,
+          generating UI,
+          fixing errors.
+        </p>
+
+        <ul>
+
+          <li>✔ Full Stack Help</li>
+
+          <li>✔ AI Coding</li>
+
+          <li>✔ Faster Learning</li>
+
+          <li>✔ Project Ideas</li>
+
+        </ul>
+<button class="tool-btn"
+data-link="https://chat.openai.com">
+  Use Tool
+</button>
+      </div>
+
+      <!-- TOOL CARD -->
+
+      <div class="ai-tool-card">
+
+        <div class="tool-top">
+
+          <h2>Cursor AI</h2>
+
+          <span>Code Editor</span>
+
+        </div>
+
+        <p>
+          AI-powered editor
+          for modern developers.
+        </p>
+
+        <ul>
+
+          <li>✔ AI Editing</li>
+
+          <li>✔ Smart Refactoring</li>
+
+          <li>✔ Explain Code</li>
+
+          <li>✔ Faster Workflow</li>
+
+        </ul>
+
+        <button class="tool-btn"
+data-link="https://cursor.com">
+  Use Tool
+</button>
+
+
+      </div>
+
+      <!-- TOOL CARD -->
+
+      <div class="ai-tool-card">
+
+        <div class="tool-top">
+
+          <h2>GitHub Copilot</h2>
+
+          <span>AI Coding</span>
+
+        </div>
+
+        <p>
+          AI coding assistant
+          inside VS Code.
+        </p>
+
+        <ul>
+
+          <li>✔ Auto Suggestions</li>
+
+          <li>✔ Faster Coding</li>
+
+          <li>✔ Pair Programming</li>
+
+          <li>✔ Smart Completion</li>
+
+        </ul>
+
+        <button class="tool-btn"
+data-link="https://github.com/copilot">
+  Use Tool
+</button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <h1 class="section-title">
+      AI Projects
+    </h1>
+
+    <div class="project-grid">
+
+      <div class="project-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+          alt="project"
+        >
+
+        <div class="project-content">
+
+          <h3>AI SaaS Dashboard</h3>
+
+          <p>
+            Modern AI startup platform.
+          </p>
+
+          <button class="project-btn"
+data-link="https://github.com/">
+  View Project
+</button>
+
+        </div>
+
+      </div>
+
+      <div class="project-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1200&auto=format&fit=crop"
+          alt="project"
+        >
+
+        <div class="project-content">
+
+          <h3>AI Resume Builder</h3>
+
+          <p>
+            Build resumes using AI.
+          </p>
+
+          <button class="project-btn"
+data-link="https://github.com/">
+  View Project
+</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ROADMAP -->
+
+  <section id="roadmap">
+
+    <h1 class="section-title">
+      2026 Developer Roadmap
+    </h1>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+
+        <span>01</span>
+
+        <div class="timeline-content">
+
+          <h3>Frontend</h3>
+
+          <p>
+            HTML, CSS,
+            JavaScript,
+            React.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="timeline-item">
+
+        <span>02</span>
+
+        <div class="timeline-content">
+
+          <h3>AI Tools</h3>
+
+          <p>
+            ChatGPT,
+            Copilot,
+            Cursor AI,
+            Midjourney.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="timeline-item">
+
+        <span>03</span>
+
+        <div class="timeline-content">
+
+          <h3>Build Projects</h3>
+
+          <p>
+            SaaS apps,
+            AI systems,
+            startups.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="timeline-item">
+
+        <span>04</span>
+
+        <div class="timeline-content">
+
+          <h3>Start Earning</h3>
+
+          <p>
+            Freelancing,
+            remote jobs,
+            AI businesses.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FUTURE -->
+
+  <section id="future">
+
+    <h1 class="section-title">
+      Future Of Developers
+    </h1>
+
+    <div class="card-container">
+
+      <div class="card">
+
+        <h3>Build Faster</h3>
+
+        <p>
+          AI reduces development time massively.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Create Startups</h3>
+
+        <p>
+          One developer can now
+          build startup-level products.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Remote Opportunities</h3>
+
+        <p>
+          Global AI jobs are increasing rapidly.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- BANNER -->
+
+  <section class="future-banner">
+
+    <h1>
+      The Future Belongs To AI Developers
+    </h1>
+
+    <p>
+      Developers who combine AI,
+      coding, automation,
+      and creativity
+      will dominate the next generation.
+    </p>
+
+    <button>
+      Enter The Future
+    </button>
+
+  </section>
+
+  <!-- CONTACT SECTION -->
+
+<section id="contact">
+
+  <h2 class="section-title">
+    Contact Me
+  </h2>
+
+  <div class="contact-container">
+
+    <form id="contact-form">
+
+      <input
+      type="text"
+      id="name"
+      placeholder="Your Name"
+      required>
+
+      <input
+      type="email"
+      id="email"
+      placeholder="Your Email"
+      required>
+
+      <textarea
+      id="message"
+      rows="6"
+      placeholder="Your Message"
+      required></textarea>
+
+      <button type="submit">
+        Send Message
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+  <!-- FOOTER -->
+
+  <footer>
+
+    <h2>FutureDev 2026</h2>
+
+    <p>
+      Built For The AI Era.
+    </p>
+
+    <div class="social-icons">
+
+      <i class="ri-github-fill"></i>
+
+      <i class="ri-linkedin-box-fill"></i>
+
+      <i class="ri-twitter-x-fill"></i>
+
+      <i class="ri-instagram-line"></i>
+
+    </div>
+
+  </footer>
+
+  <!-- SCRIPTS -->
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
