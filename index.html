@@ -9,7 +9,7 @@
 
   <!-- CSS -->
 
-  <link rel="stylesheet" href="Style.css" />
+  <link rel="stylesheet" href="css/Style.css" />
 
   <!-- Remix Icons -->
 
@@ -31,9 +31,11 @@
 
 <!-- AI CHATBOT -->
 
-<div class="chatbot-toggle">
+<body>
+  
+<!-- <div class="chatbot-toggle">
   <i class="ri-robot-2-line"></i>
-</div>
+</div> -->
 
 <div class="chatbot">
 
@@ -71,7 +73,6 @@
   </div>
 
 </div>
-<body>
   <!-- AI CHATBOT -->
 
 <div class="chatbot-toggle">
@@ -447,127 +448,226 @@
   </section>
 
   <!-- AI TOOLS -->
+<!-- TOOLS -->
 
-  <section id="tools">
+<section id="tools">
 
-    <h1 class="section-title">
-      Best AI Tools For Developers
-    </h1>
+  <h1 class="section-title">
+    Best AI Tools For Developers
+  </h1>
 
-    <div class="tools-grid">
+  <!-- FILTERS -->
 
-      <!-- TOOL CARD -->
+  <div class="tool-filters">
 
-      <div class="ai-tool-card">
+    <button
+      class="filter-btn active"
+      data-filter="all"
+    >
+      All
+    </button>
 
-        <div class="tool-top">
+    <button
+      class="filter-btn"
+      data-filter="coding"
+    >
+      Coding
+    </button>
 
-          <h2>ChatGPT</h2>
+    <button
+      class="filter-btn"
+      data-filter="design"
+    >
+      Design
+    </button>
 
-          <span>AI Assistant</span>
+    <button
+      class="filter-btn"
+      data-filter="productivity"
+    >
+      Productivity
+    </button>
 
-        </div>
+  </div>
 
-        <p>
-          Coding, debugging,
-          learning frameworks,
-          generating UI,
-          fixing errors.
-        </p>
+  <!-- SEARCH -->
 
-        <ul>
+  <div class="tool-search">
 
-          <li>✔ Full Stack Help</li>
+    <input
+      type="text"
+      id="toolSearch"
+      placeholder="Search AI tools..."
+    >
 
-          <li>✔ AI Coding</li>
+  </div>
 
-          <li>✔ Faster Learning</li>
+  <!-- TOOLS GRID -->
 
-          <li>✔ Project Ideas</li>
+  <div class="tools-grid">
 
-        </ul>
-<button class="tool-btn"
-data-link="https://chat.openai.com">
-  Use Tool
-</button>
-      </div>
+    <!-- CHATGPT -->
 
-      <!-- TOOL CARD -->
+    <div
+      class="ai-tool-card"
+      data-category="coding"
+    >
 
-      <div class="ai-tool-card">
+      <div class="tool-top">
 
-        <div class="tool-top">
+        <h2>ChatGPT</h2>
 
-          <h2>Cursor AI</h2>
-
-          <span>Code Editor</span>
-
-        </div>
-
-        <p>
-          AI-powered editor
-          for modern developers.
-        </p>
-
-        <ul>
-
-          <li>✔ AI Editing</li>
-
-          <li>✔ Smart Refactoring</li>
-
-          <li>✔ Explain Code</li>
-
-          <li>✔ Faster Workflow</li>
-
-        </ul>
-
-        <button class="tool-btn"
-data-link="https://cursor.com">
-  Use Tool
-</button>
-
+        <span>AI Assistant</span>
 
       </div>
 
-      <!-- TOOL CARD -->
+      <p>
+        Coding, debugging,
+        learning frameworks,
+        generating UI,
+        fixing errors.
+      </p>
 
-      <div class="ai-tool-card">
+      <ul>
 
-        <div class="tool-top">
+        <li>✔ Full Stack Help</li>
 
-          <h2>GitHub Copilot</h2>
+        <li>✔ AI Coding</li>
 
-          <span>AI Coding</span>
+        <li>✔ Faster Learning</li>
 
-        </div>
+      </ul>
 
-        <p>
-          AI coding assistant
-          inside VS Code.
-        </p>
-
-        <ul>
-
-          <li>✔ Auto Suggestions</li>
-
-          <li>✔ Faster Coding</li>
-
-          <li>✔ Pair Programming</li>
-
-          <li>✔ Smart Completion</li>
-
-        </ul>
-
-        <button class="tool-btn"
-data-link="https://github.com/copilot">
-  Use Tool
-</button>
-
-      </div>
+      <button
+        class="tool-btn"
+        data-link="https://chat.openai.com"
+      >
+        Use Tool
+      </button>
 
     </div>
 
-  </section>
+    <!-- CURSOR -->
+
+    <div
+      class="ai-tool-card"
+      data-category="coding"
+    >
+
+      <div class="tool-top">
+
+        <h2>Cursor AI</h2>
+
+        <span>Code Editor</span>
+
+      </div>
+
+      <p>
+        AI-powered editor
+        for modern developers.
+      </p>
+
+      <ul>
+
+        <li>✔ AI Editing</li>
+
+        <li>✔ Smart Refactoring</li>
+
+        <li>✔ Explain Code</li>
+
+      </ul>
+
+      <button
+        class="tool-btn"
+        data-link="https://cursor.com"
+      >
+        Use Tool
+      </button>
+
+    </div>
+
+    <!-- MIDJOURNEY -->
+
+    <div
+      class="ai-tool-card"
+      data-category="design"
+    >
+
+      <div class="tool-top">
+
+        <h2>Midjourney</h2>
+
+        <span>AI Design</span>
+
+      </div>
+
+      <p>
+        Create AI generated
+        artwork and futuristic images.
+      </p>
+
+      <ul>
+
+        <li>✔ AI Art</li>
+
+        <li>✔ Creative Design</li>
+
+        <li>✔ Concept Images</li>
+
+      </ul>
+
+      <button
+        class="tool-btn"
+        data-link="https://midjourney.com"
+      >
+        Use Tool
+      </button>
+
+    </div>
+
+    <!-- NOTION -->
+
+    <div
+      class="ai-tool-card"
+      data-category="productivity"
+    >
+
+      <div class="tool-top">
+
+        <h2>Notion AI</h2>
+
+        <span>Productivity</span>
+
+      </div>
+
+      <p>
+        Smart AI workspace
+        for notes, tasks,
+        and organization.
+      </p>
+
+      <ul>
+
+        <li>✔ Notes</li>
+
+        <li>✔ Productivity</li>
+
+        <li>✔ AI Writing</li>
+
+      </ul>
+
+      <button
+        class="tool-btn"
+        data-link="https://notion.so"
+      >
+        Use Tool
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
 
   <!-- PROJECTS -->
 
@@ -823,9 +923,72 @@ data-link="https://github.com/">
   </div>
 
 </section>
+<!-- AI NEWS -->
+
+<section id="news">
+
+  <h1 class="section-title">
+    Trending AI News
+  </h1>
+
+  <div class="news-grid">
+
+    <div class="news-card">
+
+      <span>AI UPDATE</span>
+
+      <h3>
+        AI Coding Is Growing Fast
+      </h3>
+
+      <p>
+        Developers are now using AI
+        to build applications faster
+        than ever before.
+      </p>
+
+    </div>
+
+    <div class="news-card">
+
+      <span>TECH NEWS</span>
+
+      <h3>
+        AI Startups Are Exploding
+      </h3>
+
+      <p>
+        Modern startups are combining
+        AI automation with web apps
+        to scale rapidly.
+      </p>
+
+    </div>
+
+    <div class="news-card">
+
+      <span>FUTURE</span>
+
+      <h3>
+        Developers + AI = Power
+      </h3>
+
+      <p>
+        AI is becoming the best
+        productivity partner for
+        developers worldwide.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
   <!-- FOOTER -->
 
   <footer>
+  
+</section>
 
     <h2>FutureDev 2026</h2>
 
@@ -853,7 +1016,7 @@ data-link="https://github.com/">
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 
 </body>
 

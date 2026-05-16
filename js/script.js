@@ -2,7 +2,7 @@
 
 AOS.init({
   duration: 1000,
-  once: false
+  once: true
 });
 
 // PARTICLES JS
@@ -143,7 +143,7 @@ function typeEffect() {
     }
   }
 
-  setTimeout(typeEffect, isDeleting ? 50 : 100);
+  setTimeout(typeEffect, isDeleting ? 40 : 90);
 }
 
 typeEffect();
@@ -300,7 +300,8 @@ function typeTerminalLine(text, callback){
 
       line.textContent +=
       text.charAt(charIndex);
-
+terminalOutput.scrollTop =
+terminalOutput.scrollHeight;
       charIndex++;
 
       setTimeout(typeChar, 35);
@@ -750,25 +751,219 @@ function getBotReply(message){
   const msg =
   message.toLowerCase();
 
-  if(msg.includes("html")){
-    return "HTML is used to build website structure 🚀";
+  if(
+    msg.includes("html")
+  ){
+    return "HTML creates the structure of websites 🚀";
   }
 
-  if(msg.includes("css")){
-    return "CSS makes websites beautiful 🎨";
+  if(
+    msg.includes("css")
+  ){
+    return "CSS is used for styling beautiful UI 🎨";
   }
 
-  if(msg.includes("javascript")){
-    return "JavaScript adds interactivity ⚡";
+  if(
+    msg.includes("javascript")
+  ){
+    return "JavaScript adds logic and interactivity ⚡";
   }
 
-  if(msg.includes("ai")){
-    return "AI is transforming the future of development 🤖";
+  if(
+    msg.includes("react")
+  ){
+    return "React helps developers build fast modern UI ⚛️";
   }
 
-  if(msg.includes("react")){
-    return "React is one of the most powerful frontend libraries ⚛️";
+  if(
+    msg.includes("ai")
+  ){
+    return "AI is transforming software development 🤖";
   }
 
-  return "Future AI is learning your question 🚀";
+  if(
+    msg.includes("node")
+  ){
+    return "Node.js allows JavaScript to run on servers 🌐";
+  }
+
+  if(
+    msg.includes("mongodb")
+  ){
+    return "MongoDB is a NoSQL database used in modern apps 🍃";
+  }
+
+  if(
+    msg.includes("future")
+  ){
+    return "The future belongs to developers using AI 🚀";
+  }
+
+  if(
+    msg.includes("hello")
+  ){
+    return "Hello Developer 👋";
+  }
+
+  return `
+    I am Future AI Assistant 🤖<br>
+    Try asking about:
+    HTML, CSS, JavaScript,
+    React, AI, Node.js,
+    MongoDB or Future Tech 🚀
+  `;
+
 }
+
+/* TOOL FILTER */
+
+let filterBtns =
+  document.querySelectorAll(".filter-btn");
+
+let toolCards =
+  document.querySelectorAll(".ai-tool-card");
+
+const toolSearch =
+  document.getElementById("toolSearch");
+
+filterBtns.forEach(btn => {
+
+  btn.addEventListener("click", () => {
+
+    document
+      .querySelector(".filter-btn.active")
+      .classList.remove("active");
+
+    btn.classList.add("active");
+
+    const filter = btn.dataset.filter;
+
+    toolCards.forEach(card => {
+
+      if (
+        filter === "all" ||
+        card.dataset.category === filter
+      ) {
+
+        card.style.display = "block";
+
+      } else {
+
+        card.style.display = "none";
+
+      }
+
+    });
+
+  });
+
+});
+
+/* SEARCH */
+
+toolSearch.addEventListener("keyup", () => {
+
+  const value =
+    toolSearch.value.toLowerCase();
+
+  toolCards.forEach(card => {
+
+    const text =
+      card.innerText.toLowerCase();
+
+    if (text.includes(value)) {
+
+      card.style.display = "block";
+
+    } else {
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+});
+
+/* TOOL FILTER */
+
+ filterBtns =
+document.querySelectorAll(".filter-btn");
+
+ toolCards =
+document.querySelectorAll(".ai-tool-card");
+
+toolSearch =
+document.getElementById("toolSearch");
+
+if(toolSearch){
+
+filterBtns.forEach(btn => {
+
+  btn.addEventListener("click", () => {
+
+    document
+      .querySelector(".filter-btn.active")
+      .classList.remove("active");
+
+    btn.classList.add("active");
+
+    const filter =
+    btn.dataset.filter;
+
+    toolCards.forEach(card => {
+
+      if(
+        filter === "all" ||
+        card.dataset.category === filter
+      ){
+
+        card.style.display = "block";
+
+      } else {
+
+        card.style.display = "none";
+
+      }
+
+    });
+
+  });
+
+});
+
+/* SEARCH */
+
+toolSearch.addEventListener("keyup", () => {
+
+  const value =
+  toolSearch.value.toLowerCase();
+
+  toolCards.forEach(card => {
+
+    const text =
+    card.innerText.toLowerCase();
+
+    if(text.includes(value)){
+
+      card.style.display = "block";
+
+    } else {
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+});
+
+}
+window.addEventListener("load", () => {
+
+  document.body.style.overflow = "hidden";
+
+  loader.classList.add("hide");
+
+  document.body.style.overflow = "auto";
+});

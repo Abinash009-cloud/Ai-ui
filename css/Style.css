@@ -113,7 +113,8 @@ nav ul li a.active{
     height:100vh;
     background:rgba(5,8,22,0.95);
     backdrop-filter:blur(15px);
-.nav-links li a i{
+
+   .nav-links li a i{
   margin-right:10px;
   font-size:18px;
 }
@@ -1067,4 +1068,116 @@ body.light-theme .chat-input-area input{
     height:500px;
   }
 
+}
+
+/* TOOL FILTERS */
+
+.tool-filters{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-bottom:30px;
+}
+
+.filter-btn{
+  padding:12px 25px;
+  border:none;
+  border-radius:50px;
+  background:rgba(255,255,255,0.08);
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.filter-btn:hover{
+  background:#00f7ff;
+  color:#000;
+}
+
+.filter-btn.active{
+  background:#00f7ff;
+  color:#000;
+}
+
+/* SEARCH */
+
+.tool-search{
+  display:flex;
+  justify-content:center;
+  margin-bottom:50px;
+}
+
+.tool-search input{
+  width:420px;
+  max-width:90%;
+  padding:18px;
+  border:none;
+  outline:none;
+  border-radius:15px;
+  background:rgba(255,255,255,0.08);
+  color:white;
+  font-size:16px;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.tool-search input::placeholder{
+  color:#94a3b8;
+}
+
+/* LIGHT MODE */
+
+body.light-theme .tool-search input{
+  background:rgba(0,0,0,0.05);
+  color:#0f172a;
+}
+
+body.light-theme .filter-btn{
+  background:rgba(0,0,0,0.05);
+  color:#0f172a;
+}
+/* AI NEWS */
+
+.news-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:35px;
+}
+
+.news-card{
+  padding:30px;
+  border-radius:25px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  backdrop-filter:blur(15px);
+  transition:0.4s;
+}
+
+.news-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 30px rgba(0,247,255,0.15);
+}
+
+.news-card span{
+  color:#00f7ff;
+  font-size:14px;
+}
+
+.news-card h3{
+  margin:15px 0;
+  color:#ffffff;
+  font-size:24px;
+}
+
+.news-card p{
+  color:#cbd5e1;
+  line-height:1.8;
+}
+
+body.light-theme .news-card{
+  background:rgba(255,255,255,0.7);
+}
+
+body.light-theme .news-card h3{
+  color:#0f172a;
 }
