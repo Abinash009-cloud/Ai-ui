@@ -45,12 +45,7 @@ particlesJS("particles-js", {
 
     move: {
       enable: true,
-      speed: 2,
-      direction: "none",
-      random: false,
-      straight: false,
-      out_mode: "out",
-      bounce: false
+      speed: 2
     }
   },
 
@@ -66,9 +61,7 @@ particlesJS("particles-js", {
       onclick: {
         enable: true,
         mode: "push"
-      },
-
-      resize: true
+      }
     },
 
     modes: {
@@ -89,7 +82,7 @@ particlesJS("particles-js", {
   retina_detect: true
 });
 
-// TYPING EFFECT
+// HERO TYPING EFFECT
 
 const heroTitle = document.querySelector(".hero h2");
 
@@ -148,10 +141,54 @@ function typeEffect() {
 
 typeEffect();
 
-// NAVBAR ACTIVE LINK
+// MOBILE NAVBAR
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav ul li a");
+const menuToggle =
+document.querySelector(".menu-toggle");
+
+const navMenu =
+document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+
+  navMenu.classList.toggle("active");
+
+  const icon =
+  menuToggle.querySelector("i");
+
+  if(navMenu.classList.contains("active")){
+
+    icon.classList.remove("ri-menu-3-line");
+    icon.classList.add("ri-close-line");
+
+  } else {
+
+    icon.classList.remove("ri-close-line");
+    icon.classList.add("ri-menu-3-line");
+  }
+
+});
+
+// CLOSE MENU
+
+document.querySelectorAll(".nav-links a")
+.forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    navMenu.classList.remove("active");
+
+  });
+
+});
+
+// ACTIVE NAVBAR LINK
+
+const sections =
+document.querySelectorAll("section");
+
+const navLinks =
+document.querySelectorAll("nav ul li a");
 
 window.addEventListener("scroll", () => {
 
@@ -162,111 +199,78 @@ window.addEventListener("scroll", () => {
     const sectionTop = section.offsetTop;
 
     if (pageYOffset >= sectionTop - 200) {
-      current = section.getAttribute("id");
+
+      current =
+      section.getAttribute("id");
+
     }
+
   });
 
   navLinks.forEach(link => {
 
     link.classList.remove("active");
 
-    if (link.getAttribute("href").includes(current)) {
+    if (
+      link.getAttribute("href")
+      .includes(current)
+    ) {
+
       link.classList.add("active");
+
     }
+
   });
+
 });
 
-// GLOW EFFECT FOLLOW MOUSE
+// GLOW FOLLOW MOUSE
 
-const glow = document.querySelector(".glow");
+const glow =
+document.querySelector(".glow");
 
 document.addEventListener("mousemove", (e) => {
 
-  glow.style.left = e.clientX - 200 + "px";
+  glow.style.left =
+  e.clientX - 200 + "px";
 
-  glow.style.top = e.clientY - 200 + "px";
+  glow.style.top =
+  e.clientY - 200 + "px";
+
 });
 
-// SCROLL REVEAL EFFECT
+// SCROLL REVEAL
 
 const revealElements =
-  document.querySelectorAll(
-    ".card, .ai-tool-card, .project-card, .timeline-item"
-  );
-
-window.addEventListener("scroll", reveal);
+document.querySelectorAll(
+".card, .ai-tool-card, .project-card, .timeline-item"
+);
 
 function reveal() {
 
   const triggerBottom =
-    window.innerHeight * 0.85;
+  window.innerHeight * 0.85;
 
   revealElements.forEach(el => {
 
     const boxTop =
-      el.getBoundingClientRect().top;
+    el.getBoundingClientRect().top;
 
-    if (boxTop < triggerBottom) {
+    if(boxTop < triggerBottom){
 
       el.classList.add("show");
 
-    } else {
-
-      el.classList.remove("show");
     }
+
   });
+
 }
+
+window.addEventListener("scroll", reveal);
 
 reveal();
 
-// BUTTON RIPPLE EFFECT
-
-const buttons =
-  document.querySelectorAll("button");
-
-buttons.forEach(button => {
-
-  button.addEventListener("click", function(e) {
-
-    const circle =
-      document.createElement("span");
-
-    const diameter =
-      Math.max(
-        button.clientWidth,
-        button.clientHeight
-      );
-
-    const radius = diameter / 2;
-
-    circle.style.width =
-      circle.style.height =
-      `${diameter}px`;
-
-    circle.style.left =
-      `${e.clientX -
-      button.offsetLeft -
-      radius}px`;
-
-    circle.style.top =
-      `${e.clientY -
-      button.offsetTop -
-      radius}px`;
-
-    circle.classList.add("ripple");
-
-    const ripple =
-      button.getElementsByClassName("ripple")[0];
-
-    if (ripple) {
-      ripple.remove();
-    }
-
-    button.appendChild(circle);
-  });
-});
-
-// REAL TERMINAL TYPING EFFECT
+// TERMINAL EFFECT
 
 const terminalOutput =
 document.getElementById("terminal-output");
@@ -277,8 +281,6 @@ const terminalMessages = [
   "> Connecting Neural Network...",
   "> Loading Full Stack Modules...",
   "> Initializing Automation System...",
-  "> Connecting OpenAI Services...",
-  "> Access Granted...",
   "> Welcome Developer 🚀"
 
 ];
@@ -300,8 +302,7 @@ function typeTerminalLine(text, callback){
 
       line.textContent +=
       text.charAt(charIndex);
-terminalOutput.scrollTop =
-terminalOutput.scrollHeight;
+
       charIndex++;
 
       setTimeout(typeChar, 35);
@@ -338,79 +339,6 @@ function startTerminalAnimation(){
 }
 
 startTerminalAnimation();
-// OPTIONAL
-
-// Uncomment if you want animated terminal
-
-// terminal.innerHTML = "";
-// terminalAnimation();
-
-// PARALLAX EFFECT
-
-window.addEventListener("scroll", () => {
-
-  const scrollY = window.scrollY;
-
-  document.querySelector(".hero-content")
-    .style.transform =
-    `translateY(${scrollY * 0.2}px)`;
-});
-
-// FUTURE GLOW RANDOM ANIMATION
-
-setInterval(() => {
-
-  glow.style.opacity =
-    Math.random() * 0.2 + 0.05;
-
-}, 2000);
-// MOBILE NAVBAR
-
-const menuToggle =
-document.querySelector(".menu-toggle");
-
-const navMenu =
-document.querySelector(".nav-links");
-
-menuToggle.addEventListener("click", () => {
-
-  navMenu.classList.toggle("active");
-
-  // ICON CHANGE
-
-  const icon =
-  menuToggle.querySelector("i");
-
-  if(navMenu.classList.contains("active")){
-
-    icon.classList.remove("ri-menu-3-line");
-    icon.classList.add("ri-close-line");
-
-  } else {
-
-    icon.classList.remove("ri-close-line");
-    icon.classList.add("ri-menu-3-line");
-  }
-});
-
-// CLOSE MENU WHEN CLICK LINK
-
-document.querySelectorAll(".nav-links a")
-.forEach(link => {
-
-  link.addEventListener("click", () => {
-
-    navMenu.classList.remove("active");
-
-    const icon =
-    menuToggle.querySelector("i");
-
-    icon.classList.remove("ri-close-line");
-    icon.classList.add("ri-menu-3-line");
-
-  });
-
-});
 
 // HERO BUTTONS
 
@@ -420,61 +348,33 @@ document.getElementById("startFutureBtn");
 const exploreBtn =
 document.getElementById("exploreAiBtn");
 
-// SCROLL TO ROADMAP
+if(startBtn){
 
-startBtn.addEventListener("click", () => {
+  startBtn.addEventListener("click", () => {
 
-  document.querySelector("#roadmap")
-  .scrollIntoView({
-    behavior:"smooth"
-  });
-
-});
-
-// SCROLL TO AI TOOLS
-
-exploreBtn.addEventListener("click", () => {
-
-  document.querySelector("#tools")
-  .scrollIntoView({
-    behavior:"smooth"
-  });
-
-});
-
-// TOOL BUTTON LINKS
-
-document.querySelectorAll(".tool-btn")
-.forEach(button => {
-
-  button.addEventListener("click", () => {
-
-    const link =
-    button.getAttribute("data-link");
-
-    window.open(link, "_blank");
+    document.querySelector("#roadmap")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
 
   });
 
-});
+}
 
-// PROJECT BUTTON LINKS
+if(exploreBtn){
 
-document.querySelectorAll(".project-btn")
-.forEach(button => {
+  exploreBtn.addEventListener("click", () => {
 
-  button.addEventListener("click", () => {
-
-    const link =
-    button.getAttribute("data-link");
-
-    window.open(link, "_blank");
+    document.querySelector("#tools")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
 
   });
 
-});
+}
 
-// ANIMATED COUNTERS
+// COUNTER
 
 const counters =
 document.querySelectorAll(".counter");
@@ -487,6 +387,8 @@ function runCounters() {
 
   const statsSection =
   document.querySelector(".hero-stats");
+
+  if(!statsSection) return;
 
   const sectionTop =
   statsSection.getBoundingClientRect().top;
@@ -517,16 +419,18 @@ function runCounters() {
 
         } else {
 
-          counter.innerText = target;
-
-          // ADD X TO FIRST
           if(target === 10){
-            counter.innerText = "10X";
-          }
 
-          // ADD /7 TO LAST
-          if(target === 24){
+            counter.innerText = "10X";
+
+          } else if(target === 24){
+
             counter.innerText = "24/7";
+
+          } else {
+
+            counter.innerText = target;
+
           }
 
         }
@@ -553,24 +457,19 @@ document.querySelector(".theme-toggle");
 const themeIcon =
 themeToggle.querySelector("i");
 
-// LOAD SAVED THEME
-
 if(localStorage.getItem("theme") === "light"){
 
   document.body.classList.add("light-theme");
 
   themeIcon.classList.remove("ri-moon-line");
+
   themeIcon.classList.add("ri-sun-line");
 
 }
 
-// TOGGLE THEME
-
 themeToggle.addEventListener("click", () => {
 
   document.body.classList.toggle("light-theme");
-
-  // SAVE THEME
 
   if(document.body.classList.contains("light-theme")){
 
@@ -589,7 +488,8 @@ themeToggle.addEventListener("click", () => {
   }
 
 });
-// LOADER SCREEN
+
+// LOADER
 
 window.addEventListener("load", () => {
 
@@ -600,47 +500,10 @@ window.addEventListener("load", () => {
 
     loader.classList.add("hide");
 
-  }, 3200);
+  }, 3000);
 
 });
-// EMAIL JS
 
-emailjs.init("YOUR_PUBLIC_KEY");
-
-const contactForm =
-document.getElementById("contact-form");
-
-contactForm.addEventListener("submit", (e) => {
-
-  e.preventDefault();
-
-  emailjs.send(
-    "YOUR_SERVICE_ID",
-    "YOUR_TEMPLATE_ID",
-    {
-      from_name:
-      document.getElementById("name").value,
-
-      from_email:
-      document.getElementById("email").value,
-
-      message:
-      document.getElementById("message").value
-    }
-
-  ).then(() => {
-
-    alert("Message Sent Successfully 🚀");
-
-    contactForm.reset();
-
-  }).catch(() => {
-
-    alert("Failed To Send Message");
-
-  });
-
-});
 // CHATBOT
 
 const chatbotToggle =
@@ -661,15 +524,11 @@ document.getElementById("chat-input");
 const chatBody =
 document.getElementById("chat-body");
 
-// OPEN CHAT
-
 chatbotToggle.addEventListener("click", () => {
 
   chatbot.classList.toggle("show");
 
 });
-
-// CLOSE CHAT
 
 closeChat.addEventListener("click", () => {
 
@@ -677,16 +536,12 @@ closeChat.addEventListener("click", () => {
 
 });
 
-// SEND MESSAGE
-
 function sendMessage(){
 
   const message =
   chatInput.value.trim();
 
   if(message === "") return;
-
-  // USER MESSAGE
 
   const userDiv =
   document.createElement("div");
@@ -697,11 +552,7 @@ function sendMessage(){
 
   chatBody.appendChild(userDiv);
 
-  // CLEAR INPUT
-
   chatInput.value = "";
-
-  // AUTO REPLY
 
   setTimeout(() => {
 
@@ -715,8 +566,6 @@ function sendMessage(){
 
     chatBody.appendChild(botDiv);
 
-    // AUTO SCROLL
-
     chatBody.scrollTop =
     chatBody.scrollHeight;
 
@@ -724,199 +573,111 @@ function sendMessage(){
 
 }
 
-// BUTTON CLICK
-
 sendBtn.addEventListener(
-  "click",
-  sendMessage
+"click",
+sendMessage
 );
-
-// ENTER KEY
 
 chatInput.addEventListener(
-  "keypress",
-  (e) => {
+"keypress",
+(e) => {
 
-    if(e.key === "Enter"){
-      sendMessage();
-    }
+  if(e.key === "Enter"){
+
+    sendMessage();
 
   }
-);
 
-// SIMPLE AI REPLIES
+}
+);
 
 function getBotReply(message){
 
   const msg =
   message.toLowerCase();
 
-  if(
-    msg.includes("html")
-  ){
-    return "HTML creates the structure of websites 🚀";
+  if(msg.includes("html")){
+    return "HTML creates website structure 🚀";
   }
 
-  if(
-    msg.includes("css")
-  ){
-    return "CSS is used for styling beautiful UI 🎨";
+  if(msg.includes("css")){
+    return "CSS creates beautiful UI 🎨";
   }
 
-  if(
-    msg.includes("javascript")
-  ){
-    return "JavaScript adds logic and interactivity ⚡";
+  if(msg.includes("javascript")){
+    return "JavaScript adds interactivity ⚡";
   }
 
-  if(
-    msg.includes("react")
-  ){
-    return "React helps developers build fast modern UI ⚛️";
+  if(msg.includes("react")){
+    return "React builds modern frontend apps ⚛️";
   }
 
-  if(
-    msg.includes("ai")
-  ){
-    return "AI is transforming software development 🤖";
+  if(msg.includes("ai")){
+    return "AI is changing development 🤖";
   }
 
-  if(
-    msg.includes("node")
-  ){
-    return "Node.js allows JavaScript to run on servers 🌐";
-  }
-
-  if(
-    msg.includes("mongodb")
-  ){
-    return "MongoDB is a NoSQL database used in modern apps 🍃";
-  }
-
-  if(
-    msg.includes("future")
-  ){
-    return "The future belongs to developers using AI 🚀";
-  }
-
-  if(
-    msg.includes("hello")
-  ){
-    return "Hello Developer 👋";
-  }
-
-  return `
-    I am Future AI Assistant 🤖<br>
-    Try asking about:
-    HTML, CSS, JavaScript,
-    React, AI, Node.js,
-    MongoDB or Future Tech 🚀
-  `;
+  return "Ask me about HTML, CSS, JavaScript, React or AI 🚀";
 
 }
 
-/* TOOL FILTER */
+// TOOL FILTER
 
-let filterBtns =
-  document.querySelectorAll(".filter-btn");
-
-let toolCards =
-  document.querySelectorAll(".ai-tool-card");
-
-const toolSearch =
-  document.getElementById("toolSearch");
-
-filterBtns.forEach(btn => {
-
-  btn.addEventListener("click", () => {
-
-    document
-      .querySelector(".filter-btn.active")
-      .classList.remove("active");
-
-    btn.classList.add("active");
-
-    const filter = btn.dataset.filter;
-
-    toolCards.forEach(card => {
-
-      if (
-        filter === "all" ||
-        card.dataset.category === filter
-      ) {
-
-        card.style.display = "block";
-
-      } else {
-
-        card.style.display = "none";
-
-      }
-
-    });
-
-  });
-
-});
-
-/* SEARCH */
-
-toolSearch.addEventListener("keyup", () => {
-
-  const value =
-    toolSearch.value.toLowerCase();
-
-  toolCards.forEach(card => {
-
-    const text =
-      card.innerText.toLowerCase();
-
-    if (text.includes(value)) {
-
-      card.style.display = "block";
-
-    } else {
-
-      card.style.display = "none";
-
-    }
-
-  });
-
-});
-
-/* TOOL FILTER */
-
- filterBtns =
+const filterBtns =
 document.querySelectorAll(".filter-btn");
 
- toolCards =
+const toolCards =
 document.querySelectorAll(".ai-tool-card");
 
-toolSearch =
+const toolSearch =
 document.getElementById("toolSearch");
 
 if(toolSearch){
 
-filterBtns.forEach(btn => {
+  filterBtns.forEach(btn => {
 
-  btn.addEventListener("click", () => {
+    btn.addEventListener("click", () => {
 
-    document
+      document
       .querySelector(".filter-btn.active")
       .classList.remove("active");
 
-    btn.classList.add("active");
+      btn.classList.add("active");
 
-    const filter =
-    btn.dataset.filter;
+      const filter =
+      btn.dataset.filter;
+
+      toolCards.forEach(card => {
+
+        if(
+          filter === "all" ||
+          card.dataset.category === filter
+        ){
+
+          card.style.display = "block";
+
+        } else {
+
+          card.style.display = "none";
+
+        }
+
+      });
+
+    });
+
+  });
+
+  toolSearch.addEventListener("keyup", () => {
+
+    const value =
+    toolSearch.value.toLowerCase();
 
     toolCards.forEach(card => {
 
-      if(
-        filter === "all" ||
-        card.dataset.category === filter
-      ){
+      const text =
+      card.innerText.toLowerCase();
+
+      if(text.includes(value)){
 
         card.style.display = "block";
 
@@ -930,40 +691,4 @@ filterBtns.forEach(btn => {
 
   });
 
-});
-
-/* SEARCH */
-
-toolSearch.addEventListener("keyup", () => {
-
-  const value =
-  toolSearch.value.toLowerCase();
-
-  toolCards.forEach(card => {
-
-    const text =
-    card.innerText.toLowerCase();
-
-    if(text.includes(value)){
-
-      card.style.display = "block";
-
-    } else {
-
-      card.style.display = "none";
-
-    }
-
-  });
-
-});
-
 }
-window.addEventListener("load", () => {
-
-  document.body.style.overflow = "hidden";
-
-  loader.classList.add("hide");
-
-  document.body.style.overflow = "auto";
-});
